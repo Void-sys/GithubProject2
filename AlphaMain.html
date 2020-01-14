@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alpha's Property</title>
+<meta charset="utf-8">
+<meta name="description" content="This website is a property service web for project ">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Alpha's Property CCIT, Project CCIT, CCIT Project">
+<meta name="author" content="Group5CCIT2SC5">
+
+<link rel="stylesheet" href="Alpha_Main_Style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+<!--LIGHTBOX-->
+<link rel="stylesheet" type="text/css" href="lightbox2-master/src/css/lightbox.css">
+<script type="text/javascript" src="lightbox2-master/src/js/lightbox-plus-jquery.min.js"></script>
+
+
+
+	
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+
+<script type="text/javascript"> 
+	var scrollY=0;
+	var distance = 40;
+	var speed = 24;
+
+	function autoScrollTo(el){
+		var currentY = window.pageYOffset;
+		var targetY	= document.getElementById(el).offsetTop;
+		var bodyHeight = document.body.offsetHeight;
+		var yPos = currentY + window.innerHeight;
+		var animator = setTimeout('autoScrollTo(\''+el+'\')', 20);
+		if(yPos > bodyHeight){
+			clearTimeout(animator);
+		} else{
+			if(currentY < targetY-distance){
+				scrollY = currentY+distance;
+				window.scroll(0, scrollY);
+			}else{
+				clearTimeout(animator);
+			}
+		}
+	}
+
+	function resetScroller(el){
+		var currentY = window.pageYOffset;
+		var targetY	= document.getElementById(el).offsetTop;	
+		var animator = setTimeout('resetScroller(\''+el+'\')', 20);
+		if(currentY > targetY){
+			scrollY = currentY - distance;
+			window.scroll(0, scrollY);
+		} else{					
+				clearTimeout(animator);			
+			}
+	}
+
+
+
+</script>
+
+
+
+</head>
+<body>
+<nav class="nav-wrapper">
+  <div class="logo" id="Toplogo"> 
+      <i class="fas fa-atom"></i> <strong>Alpha's Property</strong>
+
+  </div>
+  <div  class="burger-icon"><i class="fas fa-bars"></i> MENU</div>
+  <ul class="nav-items main-nav mobile-hide">  	
+    <li class="list-item"><a href="#">Home</a></li>
+    <li class="list-item"><a href="#" onclick="return false;" onmousedown="autoScrollTo('gallery1');">Gallery</a></li>           
+    <li class="list-item"><a href="#" onclick="return false;" onmousedown="autoScrollTo('contact1');">Contact</a></li>
+  </ul>
+</nav>
+<div class="main-wrapper">
+  <div class="wrapper">
+    <div class="featured">
+      <div id="meta">Author Meta</div>
+      <h1>Alpha's Property</h1>
+      <span id="hero-date">October 2, 2018</span> 
+    </div>
+    <div class="featured1">
+      <div id="meta">Author Meta</div>
+      <h1>Alpha's Property</h1>
+      <span id="hero-date">October 2, 2018</span> 
+    </div>
+    <div class="sub-featured">
+      <div class="sub1">
+        <h3>Houses</h3>
+      </div>
+      <div class="sub2">
+        <h3>Apartment</h3>
+      </div>      
+      
+
+    </div>
+    <div class="main-content">
+      <p>Alpha's Property is a company that runs on property service. Alpha's Property established since 1980, the founder of this company is Dinda Mulvia and the co-founder of this company is Winda. Alpha's Property offers the best property at a great price and location throughout the 6 states. Our properties include houses and apartments.</p>
+      <p>This website provides data about houses and apartments that available for rent and purchase, Alpha's Property gives great deals at price.<span id="titik">...</span><span id="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span> 
+  	</p>
+      <button type="button" id="read" onclick="read()">Read More</button>
+     <script type="text/javascript"> 
+     	var i=0;
+     	function read(){
+     		if(!i){
+     			document.getElementById("more").style.display = "inline";
+     			document.getElementById("titik").style.display = "none";
+     			document.getElementById("read").innerHTML = "Read Less";
+     			i=1;
+     		}
+     		else{
+     			document.getElementById("more").style.display = "none";
+     			document.getElementById("titik").style.display = "inline";
+     			document.getElementById("read").innerHTML = "Read More";
+     			i=0;	
+     		}
+     	}
+     </script>
+
+      <br>      
+      <br>
+      <br>
+      <i class="gallery_header" id="gallery1">GALLERY</i>
+      <div class="slideshow-container">
+		<div class="slides fade"> 
+			<div class="number">1 / 8</div>
+			<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/Alpha1.jpg" alt="Image" width="755px" height="500px">
+		</div>
+			<div class="text"><p>Location : 3845 Longwood Ave Boulder, CO 80305 United States of America </p>	
+				<p>Year Built : 2014</p>
+				<p>Property Type : Residential</p>
+				<p>For more details please contact : +1-202-555-0149</p>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha1/livingroom.jpg" alt="Image" width="100px" height="100px" data-lightbox="Alpha1">More Pictures</a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha1/kitchenroom.jpg" width="100px" height="100px" data-lightbox="Alpha1"></a>
+				<!--<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha1/kitchenroom1.jpg" width="100px" height="100px" data-lightbox="Alpha1"></a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha1/livingroom1.jpg" width="100px" height="100px" data-lightbox="Alpha1"></a>-->
+			</div>
+		</div>
+	
+		<div class="slides fade"> 
+				<div class="number">2 / 8</div>
+				<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/Alpha2.jpg" alt="Image" width="755px" height="500px"></div>
+				<div class="text"><p>Location : 3248 Ramona St Palo Alto, CA 94306 United States of America</p> 
+
+					<p>Year Built : 2014</p>
+					<p>Property Type : Residential</p>
+					<p>For more details please contact : +1-202-555-0111</p>
+					<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha2/livingroom.jpg" alt="Image" width="100px" height="100px" data-lightbox="Alpha2">More Pictures</a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha2/kitchenroom.jpg" width="100px" height="100px" data-lightbox="Alpha2"></a>
+				<!--<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha2/livingroom1.jpg" width="100px" height="100px" data-lightbox="Alpha2"></a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha2/kitchenroom1.jpg" width="100px" height="100px" data-lightbox="Alpha2"></a>-->
+			</div>
+		</div>
+
+		<div class="slides fade"> 
+				<div class="number">3 / 8</div>
+				<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/Alpha3.jpg" alt="Image" width="755px" height="500px"></div>
+				<div class="text"><p>Location : 5101-5199 Montgomery Dr Madison, WI 53716 United States of America</p> 
+					<p>Year Built : 2016</p>
+					<p>Property Type : Residential</p>
+					<p>For more details please contact : +1-202-555-0142</p> 
+					<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha3/livingroom.jpg" alt="Image" width="100px" height="100px" data-lightbox="Alpha3">More Pictures</a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha3/kitchenroom.jpg" width="100px" height="100px" data-lightbox="Alpha3"></a>
+				<!--<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha3/kitchenroom1.jpg" width="100px" height="100px" data-lightbox="Alpha3"></a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha3/livingroom1.jpg" width="100px" height="100px" data-lightbox="Alpha3"></a>-->
+			</div>
+		</div>
+
+		<div class="slides fade"> 
+				<div class="number">4 / 8</div>
+				<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/Alpha4.jpg" alt="Image" width="755px" height="500px"></div>
+				<div class="text"><p>Location : 5201 Painted Post Dr Madison, WI 53716United States of America</p> 
+
+					<p>Year Built : 2015</p>
+					<p>Property Type : Residential</p>
+					<p>For more details please contact : +1-202-555-0160</p>
+					<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha4/livingroom.jpg" alt="Image" width="100px" height="100px" data-lightbox="Alpha4">More Pictures</a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha4/kitchenroom.jpg" width="100px" height="100px" data-lightbox="Alpha4"></a>
+				<!--<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha4/kitchenroom1.jpg" width="100px" height="100px" data-lightbox="Alpha4"></a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha4/livingroom1.jpg" width="100px" height="100px" data-lightbox="Alpha4"></a>-->
+			</div>
+		</div>
+
+		<div class="slides fade"> 
+				<div class="number">5 / 8</div>
+				<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/Alpha5.jpg" alt="Image" width="755px" height="500px"></div>
+				<div class="text"><p>Location : 1005-1001 Kimbolton Dr Lexington, KY 40509 United States of America </p>	
+					<p>Year Built : 2016</p>
+					<p>Property Type : Residential</p>
+					<p>For more details please contact : +1-202-555-0170</p> 
+					<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha5/livingroom.jpg" alt="Image" width="100px" height="100px" data-lightbox="Alpha5">More Pictures</a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha5/kitchenroom.jpg" width="100px" height="100px" data-lightbox="Alpha5"></a>
+				<!--<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha5/kitchenroom1.jpg" width="100px" height="100px" data-lightbox="Alpha5"></a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha5/livingroom1.jpg" width="100px" height="100px" data-lightbox="Alpha5"></a>-->
+			</div>
+		</div>
+
+		<div class="slides fade"> 
+				<div class="number">6 / 8</div>
+				<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/Alpha6.jpg" alt="Image" width="755px" height="500px"></div>
+				<div class="text"><p>Location : 3289 South Ct Palo Alto, CA 94306 United States of America </p>	
+					
+					<p>Year Built : 2017</p>
+					<p>Property Type : Residential</p>
+					<p>For more details please contact : +1-202-555-0108</p>
+					<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha6/livingroom.jpg" alt="Image" width="100px" height="100px" data-lightbox="Alpha6">More Pictures</a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha6/kitchenroom.jpg" width="100px" height="100px" data-lightbox="Alpha6"></a>
+				<!--<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha6/kitchenroom1.jpg" width="100px" height="100px" data-lightbox="Alpha6"></a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha6/livingroom1.jpg" width="100px" height="100px" data-lightbox="Alpha6"></a>-->
+		 	</div>
+		</div>
+
+		<div class="slides fade"> 
+				<div class="number">7 / 8</div>
+				<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/Alpha7.jpg" alt="Image" width="755px" height="500px"></div>
+				<div class="text"><p>Location : 4025 Bayfront Pkwy Orlando, FL 32806 United States of America</p>	
+					
+					<p>Year Built : 2017</p>
+					<p>Property Type : Residential</p>
+					<p>For more details please contact : +1-202-555-0109</p> 
+					<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha7/livingroom.jpg" alt="Image" width="100px" height="100px" data-lightbox="Alpha7">More Pictures</a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha7/kitchenroom.jpg" width="100px" height="100px" data-lightbox="Alpha7"></a>
+				<!--<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha7/kitchenroom1.jpg" width="100px" height="100px" data-lightbox="Alpha7"></a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha7/livingroom1.jpg" width="100px" height="100px" data-lightbox="Alpha7"></a>-->
+			</div>
+		</div>
+
+		<div class="slides fade"> 
+				<div class="number">8 / 8</div>
+				<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/Alpha8.jpg" alt="Image" width="755px" height="500px"></div>
+				<div class="text"><p>Location : 15 Rural Dr Scarsdale, NY 10583 United States of America </p>	
+					<p>Year Built : 2017</p>
+					<p>Property Type : Residential</p>
+					<p>For more details please contact : +1-202-555-0151</p> 
+					<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha8/livingroom.jpg" alt="Image" width="100px" height="100px" data-lightbox="Alpha8">More Pictures</a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha8/kitchenroom.jpg" width="100px" height="100px" data-lightbox="Alpha8"></a>
+				<!--<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha8/kitchenroom1.jpg" width="100px" height="100px" data-lightbox="Alpha8"></a>
+				<a href="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Alpha_Main/Alpha8/livingroom1.jpg" width="100px" height="100px" data-lightbox="Alpha8"></a>-->
+			</div>
+		</div>
+
+		<a class="prev" onclick="plusIndex(-1)">&#10094</a>
+		<a class="next" onclick="plusIndex(+1)">&#10095</a>
+
+		<br/>
+
+		<div class="middledots"> 
+			<span class="dots" onclick="currentSlide(1)"></span>
+			<span class="dots" onclick="currentSlide(2)"></span>
+			<span class="dots" onclick="currentSlide(3)"></span>
+			<span class="dots" onclick="currentSlide(4)"></span>
+			<span class="dots" onclick="currentSlide(5)"></span>
+			<span class="dots" onclick="currentSlide(6)"></span>
+			<span class="dots" onclick="currentSlide(7)"></span>
+			<span class="dots" onclick="currentSlide(8)"></span>		
+		</div>
+
+    </div>
+</body>
+</html>
+
+
+
+
+TEMPLATE AWAL
