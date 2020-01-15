@@ -273,7 +273,10 @@
 			<span class="dots" onclick="currentSlide(8)"></span>		
 		</div>
 
-    </div><div class="slideshow-container2">
+    </div>
+
+
+<div class="slideshow-container2">
 		<div class="slides2 fade2"> 
 			<div class="number2	 ">1 / 8</div>
 			<div><img src="C:/Users/J8138/OneDrive/Desktop/Folder Sublime/Alpha_Property/Pictures/AlphaP1.jpg" alt="Image" width="755px" height="500px"></div>
@@ -390,6 +393,8 @@
 
 </div>
 
+
+
 </div>
 
     <div class="main-sidebar" id="contact1">
@@ -493,3 +498,71 @@
 </footer>
 </body>
 </html>
+<script type="text/javascript"> 
+
+//HOUSES//
+
+var slideIndex = 1;
+
+function plusIndex(n){
+	showImage(slideIndex += n);
+}
+
+function currentSlide(n) {
+	showImage(slideIndex =n)
+}
+
+
+showImage(slideIndex);
+function showImage(n){
+	var slide = document.getElementsByClassName("slides");
+
+	if(n > slide.length){slideIndex = 1};
+	if(n < 1){slideIndex = slide.length};
+
+
+	for(var i = 0; i < slide.length; i++){
+		slide[i].style.display = "none";
+	};
+
+	slide[slideIndex-1].style.display = "block";
+
+}
+
+
+//<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+//APARTMENTS//
+
+
+
+var slideIndexAP = 1;
+
+function plusIndexAP(n){
+	showImageAP(slideIndexAP += n);
+}
+
+function currentSlideAP(n) {
+	showImageAP(slideIndexAP =n)
+}
+
+
+showImageAP(slideIndexAP);
+function showImageAP(n){
+	var slide1 = document.getElementsByClassName("slides2");
+
+	if(n > slide1.length){slideIndexAP = 1};
+	if(n < 1){slideIndexAP = slide1.length};
+
+
+	for(var i = 0; i < slide1.length; i++){
+		slide1[i].style.display = "none";
+	};
+
+	slide1[slideIndexAP-1].style.display = "block";
+
+}
+
+	
+
+</script>
