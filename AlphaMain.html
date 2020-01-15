@@ -566,3 +566,69 @@ function showImageAP(n){
 	
 
 </script>
+
+
+<script type="text/javascript"> 
+	var email_var_test = document.forms['vformtest']['email_in_test'];
+	var email_notif = document.getElementById('email_error');
+	email_var_test.addEventListener('blur' , emailVerify, true);
+
+	var regex = /^([A-Za-z0-9_\-\.]){1,}\@([A-Za-z0-9_\-\.]){1,}\.([A-Za-z]{2,4})$/;
+
+
+	function ValidateTest(){
+	if(email_var_test.value == ""){
+			email_var_test.style.border = "1px solid red";
+			document.getElementById('email_in_test').style.color = "red";
+			email_notif.textContent = "Please fill the empty field(s)";
+			email_var_test.focus();
+			return false;
+		}
+
+
+
+		if (regex.test(vformtest.email_in_test.value) == false) { 
+			email_var_test.style.border = "1px solid red";
+			document.getElementById('email_in_test').style.color = "red";
+			email_notif.textContent = "Invalid Email Address Detected, Please Write a Valid Email Address";
+			email_var_test.focus();
+			return false;
+		}
+
+function VerificationTest(){
+		var getemail = document.getElementById('email_in_test').value;
+
+		a=confirm("You Have Entered : "+"\nEmail : "+getemail+"\n\n Please check the data again!");
+
+
+	}
+
+		VerificationTest();
+
+	if(a==true){
+		alert("Thanks for yout kindness for subscribing, you'll receive a notification from our admin for further information");
+		window.location.reload(true);
+		}
+	else{
+		alert("You cancel the booking");
+		}	
+	}
+
+	function emailVerify(){
+		if (email_var_test.value !="") {
+			email_var_test.style.border = "1px solid #5E6E66";
+			document.getElementById('email_in_test').style.color = "#5e6e66";
+			email_notif.innerHTML = "";
+			return true;
+			}
+
+		if (regex.test(vformtest.email_in_test.value)==true) { 
+			email_var_test.style.border = "1px solid #5E6E66";
+			document.getElementById('email_in_test').style.color = "#5e6e66";
+			email_notif.innerHTML = "";
+			return true;
+					}
+			}
+
+
+</script>
