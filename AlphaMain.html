@@ -390,9 +390,77 @@
 
 </div>
 
-
-
 </div>
+
+    <div class="main-sidebar" id="contact1">
+      <div class="email-digest-subscription">
+        <h2>Weekly Email Update</h2>
+        <p>Subscribe below and we’ll send you a weekly email about new houses and apartment's prices and location !</p>
+        <form id="subscribe" action="#" accept-charset="UTF-8" method="post" onsubmit="return ValidateTest()" name="vformtest">
+          <input placeholder="Email Address" class="email" name="email" id="email_in_test" type="email" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,1}[.]{1}[a-zA-Z]{2,}" required>
+          <div id="email_error" class="val_error"></div>
+          <button name="button" type="submit" class="subscribe">Subscribe Me</button>
+          <!--<div class="left_cu"> 
+		<a class="button_cu" type="submit" value="Register" name="register" onclick="ValidateTest()">Subscribe</a>
+		</div>-->
+        </form>
+        <br>      
+    </div>
+
+    <header class="ccheader">
+ 		<h1>WRITE MESSAGE</h1> 
+ 		<p>If you have any question , please do not hesitate to send us a message</p>
+ 		</header>
+ 		<div class="formwrapper">
+ 		<form method="post" action="" onsubmit="return Validate()" name="vform">
+ 		<div class="ccfield-prepend">
+	 	<span class="ccform-addon"><i>Name :</i></span>
+	 	<input class="ccformfield" type="text" placeholder="Full Name" id="name_in" onkeypress="charonly(event)">
+	 	<div id="name_error" class="val_error"></div>
+		</div>
+		<div class="ccfield-prepend">
+		<span class="ccform-addon"><i>Email :</i></span>
+	 	<input class="ccformfield" type="email" placeholder="Email" id="email_in">
+		<div id="email_error" class="val_error"></div>
+		</div>
+	 	<div class="ccfield-prepend">
+	 	<span class="ccform-addon"><i>Phone Number :</i></span>
+	 	<input class="ccformfield" type="tel" placeholder="Phone" id="phone_in"  onkeypress="numonly(event)">
+		<div id="phone_error" class="val_error"></div>
+		</div>
+	 	<div class="ccfield-prepend">
+	 	<span class="ccform-addon"><i>Subject :</i></span>
+	 	<input class="ccformfield" type="text" placeholder="Subject" id="subject_in">
+		<div id="subject_error" class="val_error"></div>
+		</div>
+	 	<div class="ccfield-prepend">
+	 	<span class="ccform-addon"><i>Notes :</i></span>
+	 	<textarea class="ccformfield" name="comments" rows="8" placeholder="Message" id="notes_in"></textarea>
+	 	<div id="notes_error" class="val_error"></div>
+		</div>
+
+		<div class="left_cu"> 
+		<a class="button_cu" type="submit" value="Register" name="register" onclick="Validate()">BOOK</a>
+		</div>
+
+		<div> 
+		<a class="button_cu" type="reset" value="Reset" name="reset" onclick="RESET()">RESET</a>
+		</div>
+
+		</form>
+
+
+
+      </div>
+
+
+
+  </div>
+</div>
+</body>
+</html>
+
+
 </body>
 </html>
 
