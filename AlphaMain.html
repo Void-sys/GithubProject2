@@ -566,8 +566,6 @@ function showImageAP(n){
 	
 
 </script>
-
-
 <script type="text/javascript"> 
 	var email_var_test = document.forms['vformtest']['email_in_test'];
 	var email_notif = document.getElementById('email_error');
@@ -632,3 +630,252 @@ function VerificationTest(){
 
 
 </script>
+<script type="text/javascript"> 
+//getting all input text objects
+	var name_var = document.forms['vform']['name_in'];
+	var email_var = document.forms['vform']['email_in'];
+	var phone_var = document.forms['vform']['phone_in'];
+	var subject_var = document.forms['vform']['subject_in'];
+	var notes_var = document.forms['vform']['notes_in'];
+	
+	//getting all error display objects
+	var name_notif = document.getElementById('name_error');
+	var email_notif = document.getElementById('email_error');
+	var phone_notif = document.getElementById('phone_error');
+	var subject_notif = document.getElementById('subject_error');
+	var notes_notif = document.getElementById('notes_error');
+
+
+	//setting all event listener
+
+	name_var.addEventListener('blur' , nameVerify, true);
+	email_var.addEventListener('blur' , emailVerify, true);
+	phone_var.addEventListener('blur' , phoneVerify, true);
+	subject_var.addEventListener('blur' , subjectVerify, true);
+	notes_var.addEventListener('blur' , notesVerify, true);
+
+	//emailValidation
+
+	var regex = /^([A-Za-z0-9_\-\.]){1,}\@([A-Za-z0-9_\-\.]){1,}\.([A-Za-z]{2,4})$/;
+
+	//numberValidation
+
+	var regexhpone = /^([0-9]{10,13})$/;
+
+	//charValidation
+	var regexChar = /^([A-Za-z]{4,12})$/;
+
+	function Validate(){
+		if(name_var.value == "" || (name_var.value).length <4 || regexChar.test(vform.name_in.value)== false ){
+			name_var.style.border = "1px solid red";
+			name_notif.textContent = "Please fill the empty field(s) with the requirements(Alphabets only, must more than 4)";
+			document.getElementById('name_in').style.color = "red";
+			name_var.focus();
+			return false;			
+		}
+
+		//if((name_var.value).length <4){
+		//	name_var.style.border = "1px solid red";
+		//	name_notif.textContent = "Name Must Contain at Least 4 alphabets";
+		//	document.getElementById('name_in').style.color = "red";
+		//	name_var.focus();
+		//	return false;
+		//}
+
+		//if(regexChar.test(vform.name_in.value)== false){
+		//	name_var.style.border ="1px solid red";
+		//	document.getElementById('name_in').style.color="red";
+		//	name_notif.textContent = "Please Only fill with alphabets";
+		//	name_var.focus();
+		//	return false;
+		//}
+
+		if(email_var.value == ""){
+			email_var.style.border = "1px solid red";
+			document.getElementById('email_in').style.color = "red";
+			email_notif.textContent = "Please fill the empty field(s)";
+			email_var.focus();
+			return false;
+		}
+
+
+
+		if (regex.test(vform.email_in.value) == false) { 
+			email_var.style.border = "1px solid red";
+			document.getElementById('email_in').style.color = "red";
+			email_notif.textContent = "Invalid Email Address Detected, Please Write a Valid Email Address";
+			email_var.focus();
+			return false;
+		}
+		
+
+		if(phone_var.value == ""){
+			phone_var.style.border = "1px solid red";
+			document.getElementById('phone_in').style.color = "red";
+			phone_notif.textContent = "Please fill the empty field(s)";
+			phone_var.focus();			
+			return false;
+		}
+
+		if (regexhpone.test(vform.phone_in.value) == false) { 
+			phone_var.style.border = "1px solid red";
+			document.getElementById('phone_in').style.color = "red";
+			phone_notif.textContent = "Phone Number is Invalid";
+			phone_var.focus();
+			return false;
+		}
+
+		if(subject_var.value == ""){
+			subject_var.style.border = "1px solid red";
+			subject_notif.textContent = "Please fill the empty field(s)";
+			document.getElementById('subject_in').style.color = "red";
+			subject_var.focus();
+			return false;			
+		}
+
+		if(notes_var.value == ""){
+			notes_var.style.border = "1px solid red";
+			notes_notif.textContent = "Please fill the empty field(s)";
+			document.getElementById('notes_div').style.color = "red";
+			notes_var.focus();
+			return false;			
+		}
+
+
+	//SUBMIT VERIFICATION
+
+	function Verification(){
+		var getname = document.getElementById('name_in').value;
+		var getemail = document.getElementById('email_in').value;
+		var getphone = document.getElementById('phone_in').value;
+		var getsubject = document.getElementById('subject_in').value;
+		var getnotes = document.getElementById('notes_in').value;
+
+
+		a=confirm("You Have Entered : "+"\nName : "+getname+"\nEmail : "+getemail+"\nPhone : "+getphone+"\nSubject : "+
+					getsubject+"\nnotes : "+getnotes+"\n\n Please check the data again!");
+	}	
+
+	Verification();
+
+	if(a==true){
+		alert("Thanks for yout kindness for contacting us, you'll receive a notification from our admin for further information");
+		window.location.reload(true);
+		}
+	else{
+		alert("You cancel the booking");
+		}	
+
+}
+
+	// event handler functions
+
+	function nameVerify(){
+		if (name_var.value !="" || (name_var.value).length > 4 || regexChar.test(vform.name_in.value)==true ) {
+			name_var.style.border = "1px solid #5E6E66";
+			document.getElementById('name_in').style.color = "#5e6e66";
+			name_notif.innerHTML = "";
+			return true;
+			}
+
+		if ((name_var.value).length > 4) {
+			name_var.style.border = "1px solid #5E6E66";
+			document.getElementById('name_in').style.color = "#5e6e66";
+			name_notif.innerHTML = "";
+			return true;
+			}
+
+		if (regexChar.test(vform.name_in.value)==true) {
+			name_var.style.border = "1px solid #5E6E66";
+			document.getElementById('name_in').style.color = "#5E6E66";
+			name_notif.innerHTML = "";
+			return true;
+			}
+
+		}
+
+	function emailVerify(){
+		if (email_var.value !="") {
+			email_var.style.border = "1px solid #5E6E66";
+			document.getElementById('email_in').style.color = "#5e6e66";
+			email_notif.innerHTML = "";
+			return true;
+			}
+
+		if (regex.test(vform.email_in.value)==true) { 
+			email_var.style.border = "1px solid #5E6E66";
+			document.getElementById('email_in').style.color = "#5e6e66";
+			email_notif.innerHTML = "";
+			return true;
+					}
+			}
+
+	function phoneVerify(){
+		if (phone_var.value !="") {
+			phone_var.style.border = "1px solid #5E6E66";
+			document.getElementById('phone_in').style.color = "#5e6e66";
+			phone_notif.innerHTML = "";
+			return true;
+		}
+
+		if (regexhpone.test(vform.phone_in.value) == true) {
+		phone_var.style.border = "1px solid #5E6E66";
+			document.getElementById('phone_in').style.color = "#5e6e66";
+			phone_notif.innerHTML = "";
+			return true;	
+		}
+		}
+		function subjectVerify(){
+		if (subject_var.value !="") {
+			subject_var.style.border = "1px solid #5E6E66";
+			document.getElementById('subject_in').style.color = "#5e6e66";
+			subject_notif.innerHTML = "";
+			return true;
+		}
+	}
+		function notesVerify(){
+		if (notes_var.value !="") {
+			notes_var.style.border = "1px solid #5E6E66";
+			document.getElementById('notes_in').style.color = "#5e6e66";
+			notes_notif.innerHTML = "";
+			return true;
+		}
+	}
+function RESET(){
+		name_var.value ="";
+		email_var.value ="";
+		phone_var.value ="";
+		subject_var.value="";
+		notes_var.value="";
+		name_var.focus();
+
+		}
+
+	//event Numbers Only
+
+function numonly(evt){
+	var ch = String.fromCharCode(evt.which);
+
+	if(!(/[0-9]/.test(ch))){
+		evt.preventDefault();
+			}
+		}
+
+function charonly(evt){
+	var num = String.fromCharCode(evt.which);
+
+	if(!(/[A-Za-z]/.test(num))){
+		evt.preventDefault();
+	}
+
+}
+
+</script>
+<style>
+	.scroll{
+	height: 4000px;
+	width: 380.9px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	}
+</style>
